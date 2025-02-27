@@ -6,7 +6,7 @@
   outputs =
     { nixpkgs, ... }:
     let
-      pname = "dummy";
+      name = "pdf";
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -22,7 +22,7 @@
           inherit (pkgs) stdenv;
         in {
           default = stdenv.mkDerivation {
-            inherit pname;
+            inherit name;
             src = ./.;
 
             buildInputs = [ pkgs.texliveMedium ];

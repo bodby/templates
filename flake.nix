@@ -4,7 +4,7 @@
   outputs =
     { self }: {
       templates = {
-        defaultTemplate = self.templates.generic;
+        default = self.templates.generic;
 
         generic = {
           path = ./generic;
