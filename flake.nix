@@ -11,7 +11,6 @@
           description = "Basic flake";
         };
 
-        # TODO: Use pkgs.texliveFull or texlive.combine { }.
         latex = {
           path = ./latex;
           description = "LaTeX article";

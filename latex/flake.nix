@@ -25,7 +25,7 @@
             inherit name;
             src = ./.;
 
-            buildInputs = [ pkgs.texliveMedium ];
+            buildInputs = [ pkgs.texliveFull ];
 
             buildPhase = ''
               mkdir -p .cache/latex
@@ -44,7 +44,7 @@
           pkgs = import nixpkgs { inherit system; };
         in {
           default = pkgs.mkShell {
-            packages = [ pkgs.texliveMedium ];
+            packages = [ pkgs.texliveFull ];
           };
         });
     };
