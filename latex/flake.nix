@@ -27,12 +27,12 @@
 
             buildInputs = [ pkgs.texliveFull ];
 
-            buildPhase = ''
+            buildPhase = /* bash */ ''
               mkdir -p .cache/latex
               latexmk -interaction=nonstopmode -auxdir=.cache/latex -pdf main.tex
             '';
 
-            installPhase = ''
+            installPhase = /* bash */ ''
               mkdir -p $out
               cp main.pdf $out
             '';
