@@ -4,7 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
   outputs =
-    { nixpkgs, ... }:
+    { self, nixpkgs, ... }:
     let
       name = "pdf";
       systems = [
@@ -45,6 +45,7 @@
         in {
           default = pkgs.mkShell {
             packages = [ pkgs.texliveFull ];
+            inputsFrom = [ ];
           };
         });
     };

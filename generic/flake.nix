@@ -4,7 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
   outputs =
-    { nixpkgs, ... }:
+    { self, nixpkgs, ... }:
     let
       pname = "dummy";
       version = "1.0.0";
@@ -31,7 +31,8 @@
           pkgs = import nixpkgs { inherit system; };
         in {
           default = pkgs.mkShell {
-            packages = with pkgs; [ hello ];
+            packages = [ ];
+            inputsFrom = [ self.packages.${system}.default ];
           };
         });
     };
