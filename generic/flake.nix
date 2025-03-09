@@ -18,7 +18,7 @@
       packages = forall (system:
         let
           pkgs = import nixpkgs { inherit system; };
-          inherit (pkgs) lib stdenv;
+          inherit (pkgs) stdenv;
         in {
           default = stdenv.mkDerivation {
             inherit pname version;

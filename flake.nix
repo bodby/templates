@@ -2,11 +2,9 @@
   description = "Personal Nix flake templates";
 
   outputs =
-    { self }: {
+    { ... }: {
       templates = {
-        default = self.templates.generic;
-
-        generic = {
+        default = {
           path = ./generic;
           description = "Basic flake";
         };
